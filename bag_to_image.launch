@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<launch>
+      <node pkg="rosbag" type="play" name="rosbag" args="-d 2 /home/nawenjie/1st.bag"/>
+      <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="ROS_HOME">
+        <remap from="image" to="/pandora/sensor/pandora/camera/front_color"/>
+      </node>
+ </launch>
